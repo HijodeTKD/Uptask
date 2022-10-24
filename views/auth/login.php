@@ -12,7 +12,7 @@
             
             <div class="campo">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Tu email" name="email" value="<?php echo $usuario->email ?>">
+                <input type="email" id="email" placeholder="Tu email" name="email" value="<?php echo $usuario->email ?? '' ?>">
             </div>
             
             <div class="campo">

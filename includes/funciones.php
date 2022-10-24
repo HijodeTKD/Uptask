@@ -26,27 +26,27 @@ function from($desde) : string{
     $splitURL = explode('?', $desde);
 
     switch ($splitURL[0]) {
-        case 'http://localhost:3000/':
+        case $_ENV['SERVER_HOST']:
             $resultado = 'fromcyan';
             return $resultado; 
             break;
-        case 'http://localhost:3000/olvide':
+        case $_ENV['SERVER_HOST'] . '/olvide':
             $resultado = 'fromorange';
             return $resultado; 
             break;
-        case 'http://localhost:3000/crear':
+        case $_ENV['SERVER_HOST'] . '/crear':
             $resultado = 'frompurple';
             return $resultado; 
             break;
-        case 'http://localhost:3000/mensaje':
+        case $_ENV['SERVER_HOST'] . '/mensaje':
             $resultado = 'fromgreenyellow';
             return $resultado; 
             break;
-        case 'http://localhost:3000/confirmar':
+        case $_ENV['SERVER_HOST'] . '/confirmar':
             $resultado = 'fromgreen';
             return $resultado; 
             break;
-        case 'http://localhost:3000/reestablecer':
+        case $_ENV['SERVER_HOST'] . '/reestablecer':
             $resultado = 'fromorangeyellow';
             return $resultado; 
             break;

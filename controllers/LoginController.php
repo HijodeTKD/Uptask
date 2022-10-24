@@ -14,7 +14,7 @@ class LoginController {
         $usuario =  new Usuario;
 
         //Identify HTTP referer for CSS gradient effect
-        $desde = $_SERVER["HTTP_REFERER"] ?? 'http://localhost:3000/';
+        $desde = $_SERVER["HTTP_REFERER"] ?? $_ENV['SERVER_HOST'];
         $bgcolorfrom = from($desde);
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -75,7 +75,7 @@ class LoginController {
         $alertas = [];
 
         //Identify HTTP referer for CSS gradient effect
-        $desde = $_SERVER["HTTP_REFERER"] ?? 'http://localhost:3000/';
+        $desde = $_SERVER["HTTP_REFERER"] ?? $_ENV['SERVER_HOST'];
         $bgcolorfrom = from($desde);
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -128,7 +128,7 @@ class LoginController {
         $alertas = [];
 
         //Identify HTTP referer for CSS gradient effect
-        $desde = $_SERVER["HTTP_REFERER"] ?? 'http://localhost:3000/';
+        $desde = $_SERVER["HTTP_REFERER"] ?? $_ENV['SERVER_HOST'];
         $bgcolorfrom = from($desde);
         
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -181,7 +181,7 @@ class LoginController {
         $passChanged = false;
 
         //Identify HTTP referer for CSS gradient effect
-        $desde = $_SERVER["HTTP_REFERER"] ?? 'http://localhost:3000/';
+        $desde = $_SERVER["HTTP_REFERER"] ?? $_ENV['SERVER_HOST'];
         $bgcolorfrom = from($desde);
         
         //Without a valid token, redirect
@@ -242,7 +242,7 @@ class LoginController {
         $squares= true;
 
         //Identify HTTP referer for CSS gradient effect
-        $desde = $_SERVER["HTTP_REFERER"] ?? 'http://localhost:3000/';
+        $desde = $_SERVER["HTTP_REFERER"] ?? $_ENV['SERVER_HOST'];
         $bgcolorfrom = from($desde);
 
         //Render view
@@ -259,6 +259,10 @@ class LoginController {
         $squares= true;
         $alertas = [];
         $confirmado = false;
+
+        //Identify HTTP referer for CSS gradient effect
+        $desde = $_SERVER["HTTP_REFERER"] ?? $_ENV['SERVER_HOST'];
+        $bgcolorfrom = from($desde);
 
         //Sanitize token
         $token = s($_GET['token']);
@@ -292,6 +296,7 @@ class LoginController {
         $router->render('auth/confirmar', [
             'titulo' => 'Cuenta confirmada',
             'bgcolor' => 'green',
+            'bgcolorfromto' => $bgcolorfrom . "togreen",
             'alertas' => $alertas,
             'confirmado' => $confirmado,
             'squares' => $squares
