@@ -1,0 +1,1 @@
+function disableSendButton(){passwordActualField=document.querySelector("#passwordActual"),perfilBtn=document.querySelector("#perfilBtn"),passwordActualField.addEventListener("input",(function(){passwordActualField.value.length>=8?perfilBtn.disabled=!1:perfilBtn.disabled=!0}))}disableSendButton();
