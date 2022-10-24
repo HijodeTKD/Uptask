@@ -30,7 +30,7 @@ class Email {
         $mail->Port = $_ENV['MAIL_PORT'];
 
         //Email - Config
-        $mail->setFrom($_ENV['MAIL_PASSWORD'], "Bienvenido a UPTASK");
+        $mail->setFrom($_ENV['MAIL_USER'], "Bienvenido a UPTASK");
         $mail->addAddress($this->email);
         
         $mail->isHTML(true);
