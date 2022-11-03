@@ -1,5 +1,4 @@
 <div class="contenedor mensaje">
-    <?php include_once __DIR__ . '/../templates/darkmode.php'; ?>
     <?php include_once __DIR__ . '/../templates/header.php'; ?>
 
     <div class="contenedor-sm">
